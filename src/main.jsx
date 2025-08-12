@@ -8,6 +8,8 @@ import { Home } from './components/Home.jsx'
 import { LatestNews } from './News/LatestNews.jsx'
 import { MovieClub } from './Movie/MovieClub.jsx'
 import { SearchMovie } from './Movie/SearchMovie.jsx'
+import { MovieDetail } from './Movie/MovieDetail.jsx'
+import { MovieSearchDetail } from './Movie/MovieSearchDetail.jsx'
 
 
  const router=createBrowserRouter( 
@@ -17,6 +19,8 @@ import { SearchMovie } from './Movie/SearchMovie.jsx'
         <Route path='/latestNews' element={<LatestNews/>}/>
         <Route path='/movie' element={<MovieClub/>}/>
         <Route path='/searchmovie' element={<SearchMovie/>}/>
+        <Route path='/movie/:id' element={<MovieDetail/>}/>
+        <Route path='/searchmovie/:id' element={<MovieSearchDetail/>}/>
       
       </Route>
     ])
