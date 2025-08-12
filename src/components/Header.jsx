@@ -17,7 +17,7 @@ const Header = () => {
         <div className="space-x-6 hidden md:flex">
           
            <NavLink  to="latestNews" className="hover:text-white-200 transition hover:bg-green-500  hover:px-2 hover:rounded-4xl font-bold">  Latest <span className='font-extrabold text-indigo-600'>News</span></NavLink> 
-           <NavLink to="tasks" className="hover:text-white-200 transition  hover:bg-green-500  hover:px-2 hover:rounded-4xl font-bold">Giphy Club</NavLink> 
+            
           <NavLink to="movie" className="hover:text-white-200 transition  hover:bg-green-500  hover:px-2 hover:rounded-4xl font-bold">Movie Club</NavLink>
         </div>
 
@@ -57,7 +57,7 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 bg-orange-500">
            <NavLink to="latestNews" className="hover:text-green-200 transition"> Latest <span className='font-extrabold text-indigo-600'>News</span></NavLink> 
-          <NavLink to="/movie" className="block hover:text-indigo-200">Giphy Club</NavLink>
+ 
            <NavLink to="movie" className="block hover:text-indigo-200">Movie Club</NavLink>
         </div>
       )}

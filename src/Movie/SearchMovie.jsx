@@ -37,7 +37,7 @@ const prevPage = () => {
             throw new Error('Network response was not ok');
         }   
         const data = await response.json();
-       console.log(data)
+    
         setMovie(data);
         setTotalPages(data.total_pages);
 
@@ -63,7 +63,7 @@ const prevPage = () => {
         </div>
       </div>
    
-     <div className="bg-white/20 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+     <div className="bg-white/20 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4">
      
      {movie.results && movie.results.map((item) => (
             <div key={item.id} className="bg-white/20 bg-opacity-40 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl duration-300 object-fill hover:scale-105 transition-all ">

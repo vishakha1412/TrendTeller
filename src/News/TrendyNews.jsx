@@ -11,7 +11,7 @@ function TrendyNews() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchNews = async (searchTerm = '', category = '') => {
+  /*const fetchNews = async (searchTerm = '', category = '') => {
     setLoading(true);
     try {
       const url = `${BASE_URL}/everything?q=${searchTerm || category}&apiKey=${API_KEY}&pageSize=40`;
@@ -24,7 +24,29 @@ function TrendyNews() {
     } finally {
       setLoading(false);
     }
-  };
+  };*/
+   const fetchNews = async (searchTerm = '', category = '') => {
+  setLoading(true);
+  try {
+    const url = `${BASE_URL}/everything?q=${searchTerm || category}&apiKey=${API_KEY}&pageSize=40`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    setArticles(data.articles);
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching news:', error);
+    setArticles([]);
+  } finally {
+    setLoading(false);
+  }
+};
+
+
 
   const handleSearch = () => {
     if (query.trim()) fetchNews(query);
@@ -65,12 +87,12 @@ function TrendyNews() {
         </button>
       </nav>
 
-      {/* Hero Section */}
+  
       <section className="text-center mt-8 mb-6">
         <h2 className="text-3xl font-bold text-gray-800">Stay Update with TrendyNews</h2>
       </section>
 
-      {/* Category Buttons */}
+      
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         {categories.map(( item) => (
           <button

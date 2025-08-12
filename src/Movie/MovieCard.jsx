@@ -6,9 +6,10 @@ export const MovieCard = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(false); 
     const [totalPages, setTotalPages] = useState(1);
-   
- const url=  `https://api.themoviedb.org/3/trending/movie/day?api_key=d8e3e873f97d720456a96c8a7f837dd2&page=${currentPage}`;
+    
 
+ const url=  `https://api.themoviedb.org/3/trending/movie/day?api_key=d8e3e873f97d720456a96c8a7f837dd2&page=${currentPage}`;
+   
 
     const nextPage = () => {
   setCurrentPage((prev) => Math.min(prev + 1, totalPages));
@@ -30,7 +31,7 @@ setLoading('true');
             throw new Error('Network response was not ok');
         }   
         const data = await response.json();
-       console.log(data)
+      
         setMovie(data);
         setTotalPages(data.total_pages);
       setLoading('false');
@@ -39,7 +40,7 @@ setLoading('true');
      <>
      <NavLink to='/searchmovie' className='bg-violet-500 rounded-2xl p-4 text-white m-2'>Search</NavLink>
    
-     <div className="bg-white/20 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+     <div className="bg-white/20 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4">
      
      {movie.results && movie.results.map((item) => (
             <div key={item.id} className="bg-white/20 bg-opacity-40 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl duration-300 object-fill hover:scale-105 transition-all ">
