@@ -1,12 +1,2 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🎬🗞️ Welcome to TrendTeller — Your Pulse on Pop Culture & Headlines
+TrendTeller is your real-time radar for what the world’s watching and talking about. From blockbuster buzz to breaking news, it blends the glamour of cinema with the grit of global events—all in one sleek, animated dashboard. Powered by Movie and News APIs, TrendTeller curates trending films, top stories, and cultural shifts into a mood-driven experience that feels more like scrolling a smart feed than scanning raw data. Toggle themes, explore categories . Built with React, Tailwind CSS, and a love for expressive design, TrendTeller turns trends into a story you can feel.
