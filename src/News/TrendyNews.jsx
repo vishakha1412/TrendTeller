@@ -11,7 +11,7 @@ function TrendyNews() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  /*const fetchNews = async (searchTerm = '', category = '') => {
+  const fetchNews = async (searchTerm = '', category = '') => {
     setLoading(true);
     try {
       const url = `${BASE_URL}/everything?q=${searchTerm || category}&apiKey=${API_KEY}&pageSize=40`;
@@ -24,27 +24,8 @@ function TrendyNews() {
     } finally {
       setLoading(false);
     }
-  };*/
-   const fetchNews = async (searchTerm = '', category = '') => {
-  setLoading(true);
-  try {
-    const url = `${BASE_URL}/everything?q=${searchTerm || category}&apiKey=${API_KEY}&pageSize=40`;
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    setArticles(data.articles);
-    console.log(data);
-  } catch (error) {
-    console.error('Error fetching news:', error);
-    setArticles([]);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
+ 
 
 
 
@@ -60,9 +41,9 @@ function TrendyNews() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans px-6 py-8">
+    <div className="min-h-screen bg-white font-sans px-6 py-8 w-full m-5">
     
-      <div className="bg-blue-100 px-6 py-4 flex justify-between items-center rounded-md">
+      <div className="bg-blue-100 px-6 py-4 flex justify-between items-center rounded-md max-md:flex-col"> 
         <h1 className="text-2xl font-bold text-blue-800">Trendy News</h1>
         <div className="flex gap-2">
           <input
@@ -70,7 +51,7 @@ function TrendyNews() {
             placeholder="Search News"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="px-4 py-2 border rounded-md focus:outline-none"
+            className="px-4 py-2 border rounded-md focus:outline-none w-full"
           />
           <button
             onClick={handleSearch}
@@ -107,7 +88,7 @@ function TrendyNews() {
 {loading ? (
         <p className="text-center text-gray-500">Loading news...</p>
       ) : articles.length ? (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-sm:grid-cols-1 sm:grid-cols-1">
           {articles.map((article, idx) => (
             <div key={idx} className="border rounded-lg p-4 shadow hover:shadow-md transition">
              {article.urlToImage && (

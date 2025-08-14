@@ -40,10 +40,10 @@ setLoading('true');
      <>
      <NavLink to='/searchmovie' className='bg-violet-500 rounded-2xl p-4 text-white m-2'>Search</NavLink>
    
-     <div className="bg-white/20 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4 h-fit">
+     <div className="bg-white/20 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 grid lg:grid-cols-4 md:grid-cols-3 max-sm:grid-cols-1 sm:grid-cols-2  gap-4 h-fit">
      
      {movie.results && movie.results.map((item) => (
-            <NavLink to={`/movie/${item.id}`}><div key={item.id} className="bg-white/20 bg-opacity-40 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl duration-300 object-fill hover:scale-105 transition-all h-full">
+            <NavLink to={`/movie/${item.id}`}><div key={item.id} className="bg-white/20 bg-opacity-40 backdrop-blur-lg border border-white border-opacity-30 p-6 rounded-xl shadow-md hover:shadow-xl duration-300 object-fill hover:scale-105 transition-all h-full ">
                        
                      <div className="bg-white rounded shadow p-4 max-w-fit h-full">
                        <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title} />
